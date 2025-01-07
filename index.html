@@ -10,20 +10,20 @@
 </head>
 <body>
     
-    <span id="mainHeader"><h1>Adicione seu produto</h1></span> <br> <br> <br> <br> <br>
+    <span><h1 id="mainHeader">Adicione seu produto</h1>
     
     <span id="box">
         <table id="mainTable">
             <tr id="firstTr">
-                <td colspan="1">
+                <td colspan="1" class="topTableElements">
                     <input type="text" id="productName" placeholder="Nome do produto" class="defaultInputfield">
                 </td>
 
-                <td colspan="1">
+                <td colspan="1" class="topTableElements">
                     <input type="number" id="productValue" placeholder="Valor do produto" class="defaultInputfield">
                 </td>
 
-                <td colspan="1">
+                <td colspan="1" class="topTableElements">
                     Disponível para venda
                     <select id="productState">
                         <option>sim</option>
@@ -33,8 +33,10 @@
             </tr>
 
             <tr>
-                <td colspan="3">
+                <td colspan="3" id="bottomTableElement">
                     <input type="text" id="productDescription" placeholder="Descrição do produto">
+
+                    <button type="submit" id="sendButton">Enviar</button>
                 </td>
             </tr>
         </table>
