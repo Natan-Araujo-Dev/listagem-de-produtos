@@ -15,12 +15,27 @@
     <span id="box">
         <table border="1" id="mainTable">
             <tr id="firstTr">
-                <td colspan="1">conteudo</td>
-                <td colspan="1">conteudo</td>
-                <td colspan="1">conteudo</td>
+                <td colspan="1">
+                    <input type="text" id="productName" placeholder="Nome do produto" class="defaultInputfield">
+                </td>
+
+                <td colspan="1">
+                    <input type="number" id="productValue" placeholder="Valor do produto" class="defaultInputfield">
+                </td>
+
+                <td colspan="1">
+                    Disponível para venda
+                    <select id="productState">
+                        <option>sim</option>
+                        <option>não</option>
+                    </select>
+                </td>
             </tr>
+
             <tr>
-                <td colspan="3">conteudo</td>
+                <td colspan="3">
+                    <input type="text" id="productDescription" placeholder="Descrição do produto" class="defaultInputfield">
+                </td>
             </tr>
         </table>
     </span>
