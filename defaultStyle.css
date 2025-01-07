@@ -38,3 +38,21 @@ body {
 #firstTr {
     height: 60px;
 }
+
+.defaultInputfield {
+    width: 170px;
+    height: 40px;
+
+    border: none;
+
+    text-align: center;
+}
+
+#productDescription {
+    width: 570px;
+    height: 100px;
+
+    border: none;
+    
+    text-align: center;
+}
