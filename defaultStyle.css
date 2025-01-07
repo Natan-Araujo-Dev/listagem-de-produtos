@@ -1,0 +1,40 @@
+:root {
+    --boxWidth: 600px;
+    --boxHeight: 200px;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.defaultText {
+    color: #5a5e6a
+}
+
+#mainHeader {
+    text-align: center;
+    color: #0c5a7a
+}
+
+#box {
+    text-align: center;
+
+    border: 7px solid #353a48;
+    padding: 10px;
+    
+    width: var(--boxWidth);
+    height: var(--boxHeight);
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#mainTable {
+    width: var(--boxWidth);
+    height: var(--boxHeight);
+}
+
+#firstTr {
+    height: 60px;
+}
