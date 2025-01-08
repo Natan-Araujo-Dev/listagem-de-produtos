@@ -1,25 +1,24 @@
-const newProduct = JSON.parse(localStorage.getItem("newProduct"));
-
-const productsList = [
-    newProduct,
-    { name: "Carro", value: 20},
-    { name: "Mesa", value: 5}
-];
-
+let productsList = JSON.parse(localStorage.getItem("productsList")) || [];
 
 
 window.onload = function() {
-    productsList.sort((a, b) => a.value - b.value);
 
-    /* testando
-    localStorage.setItem("productsTest", JSON.stringify(productsList));
-    const savedProducts = JSON.parse(localStorage.getItem("productsTest"));
-    console.log(savedProducts);
-    */
+    const canAddItem = localStorage.getItem("canAddItem");
+    if (canAddItem == "true") {
 
-    productsList.forEach(object => {
-        addNewProduct(object.name, object.value);
+        const newProduct = JSON.parse(localStorage.getItem("newProduct"));
+
+        productsList.push(newProduct);
+        productsList.sort((a, b) => a.value - b.value);
+
+        localStorage.setItem("productsList", JSON.stringify(productsList));
+    }
+
+    productsList.forEach(product => {
+        addNewProduct(product.name, product.value);
     });
+
+    localStorage.setItem("canAddItem", false);
 };
 
 function addNewProduct(name, value) {
@@ -39,3 +38,10 @@ function addNewProduct(name, value) {
 
     productsTable.appendChild(newLine);
 }
+
+document.getElementById("clearButton").addEventListener("click", function(deleteData){
+    deleteData.preventDefault();
+
+    localStorage.clear();
+    window.location.href = "index.html";
+});
