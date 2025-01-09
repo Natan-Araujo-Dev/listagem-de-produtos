@@ -1,5 +1,5 @@
 let newProduct;
-let newProductName, newProductValue, newProductDisponibility, newProductDescription;
+let newProductName, newProductValue, newProductDisponibility, newProductDescription, newProductImage;
 
 const btn_send = document.getElementById("sendButton");
 
@@ -28,6 +28,7 @@ btn_send.addEventListener("click", function(uploadValue){
             value: newProductValue,
             disponibility: newProductDisponibility,
             description: newProductDescription,
+            image: newProductImage,
         };
     
         localStorage.setItem("newProduct", JSON.stringify(newProduct));
@@ -37,3 +38,28 @@ btn_send.addEventListener("click", function(uploadValue){
         }, 1000);
     }
 });
+
+//é chamado no index.html
+function getImage(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            newProductImage = e.target.result;
+            changeImage();
+        };
+
+        reader.readAsDataURL(file);
+    }
+}
+
+function changeImage() {
+    let productImageRegister = document.getElementById("registerImage");
+
+    if (!newProductImage.startsWith("data:image/")) {
+        productImageRegister.src = `data:image/png;base64,${newProductImage}`;
+    } else {
+        productImageRegister.src = newProductImage;
+    }
+}

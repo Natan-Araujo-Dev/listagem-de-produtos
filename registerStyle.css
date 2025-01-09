@@ -1,74 +1,9 @@
-:root {
-    --boxWidth: 600px;
-    --boxHeight: 200px;
-}
-
-body {
-    background-color: #ffffff;
-}
-
-#mainHeader {
-    text-align: center;
-    color: #0c5a7a;
-
-    font-size: 50px;
-
-    margin-top: 100px;
-}
-
-#box {
-    text-align: center;
-
-    border: 7px solid #353a48;
-    
-    width: var(--boxWidth);
-    height: var(--boxHeight);
-
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
-    margin-top: 120px;
-}
-
-#mainTable {
-    width: var(--boxWidth);
-    height: var(--boxHeight);
-}
-
-#firstTr {
-    height: 60px;
-}
-
-.defaultInputfield {
-    width: 170px;
-    height: 40px;
-
-    border: none;
-
-    text-align: center;
-}
-
-#productDescription {
-    width: 520px;
-    height: 120px;
-
-    border: none;
-    
-    text-align: center;
-}
-
-.topTableElements {
-    border: solid #353a48;
-}
-
-#bottomTableElement {
-    border: solid #353a48;
-}
-
-#sendButton {
-    border: solid #353a48;
-
-    margin-top: auto;
-    transform: translateY(50px);
+.cardImage {
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: contain;
+    width: auto;
+    height: auto;
 }

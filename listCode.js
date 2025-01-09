@@ -15,34 +15,39 @@ window.onload = function() {
     }
 
     productsList.forEach(product => {
-        addNewProduct(product.name, product.value, product.description);
+        addNewCard(product.name, product.value, product.description, product.image);
     });
 
     localStorage.setItem("canAddItem", false);
 };
 
-function addNewProduct(name, value, description) {
+function addNewCard(name, value, description, image) {
 
-    let productsTable = document.getElementById("productsTable");
+    //tabela
+    let productsTable = document.getElementById("productsTable"); 
 
-    let newLine = document.createElement("tr");
-    let descriptionLine = document.createElement("tr");
+    //linhas
+    let mainLine = document.createElement("tr"); let descriptionLine = document.createElement("tr");
 
-    let cellName = document.createElement("td");
-    cellName.textContent = name;
-    newLine.appendChild(cellName);
+    //celulas principais
+    let cellName = document.createElement("td"); cellName.textContent = name; mainLine.appendChild(cellName);
+    let cellValue = document.createElement("td"); cellValue.textContent = value; mainLine.appendChild(cellValue);
 
-    let cellValue = document.createElement("td");
-    cellValue.textContent = value;
-    newLine.appendChild(cellValue);
+    //celulas auxiliares
+    let cellImage = document.createElement("td"); const cardImage = document.createElement("img");
 
-    let cellDescription = document.createElement("td");
-    cellDescription.textContent = description;
-    descriptionLine.appendChild(cellDescription);
-    cellDescription.setAttribute("colspan", "2");
+    if (!image.startsWith("data:image/")) {
+        cardImage.src = `data:image/png;base64,${image}`;
+    } else {
+        cardImage.src = image;
+    }
+    cardImage.classList.add("cardImage");
+    
+    cellImage.appendChild(cardImage); descriptionLine.appendChild(cellImage);
 
-    productsTable.appendChild(newLine);
-    productsTable.appendChild(descriptionLine);
+    let cellDescription = document.createElement("td"); cellDescription.textContent = description; descriptionLine.appendChild(cellDescription); //cellDescription.setAttribute("colspan", "2");
+
+    productsTable.appendChild(mainLine); productsTable.appendChild(descriptionLine);
 }
 
 document.getElementById("clearButton").addEventListener("click", function(deleteData){
@@ -51,4 +56,3 @@ document.getElementById("clearButton").addEventListener("click", function(delete
     localStorage.clear();
     window.location.href = "index.html";
 });
-//alteração

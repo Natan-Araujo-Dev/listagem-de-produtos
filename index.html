@@ -10,21 +10,19 @@
 </head>
 <body>
     
-    <span><h1 id="mainHeader">Adicione seu produto</h1>
+    <span><h1>Adicione seu produto</h1></span>
     
-    <span id="box">
+    <span>
         <table id="mainTable">
             <tr>
-                <td colspan="1" class="topTableElements">
-                    <input type="text" id="productName" placeholder="Nome do produto" class="defaultInputfield">
+                <td>
+                    <input type="text" id="productName" placeholder="Nome do produto">
                 </td>
 
-                <td colspan="1" class="topTableElements">
-                    <input type="number" id="productValue" placeholder="Valor do produto" class="defaultInputfield">
-                </td>
-
-                <td colspan="1" class="topTableElements">
-                    Disponível para venda
+                <td colspan="1">
+                    <input type="number" id="productValue" placeholder="Valor do produto">
+                    <br>
+                    Disponível para venda?
                     <select id="productDisponibility">
                         <option>sim</option>
                         <option>não</option>
@@ -33,9 +31,20 @@
             </tr>
 
             <tr>
+                <td>
+                    <span class="file-upload">
+                        <label for="fileInput"><img src="assets\images\placeHolderImagem.jpg" id="registerImage" class="cardImage"></label>
+                        <input type="file" id="fileInput" style="display: none;" onchange="getImage(event)">
+                    </span>
+                </td>
+
                 <td colspan="3" id="bottomTableElement">
                     <input type="text" id="productDescription" placeholder="Descrição do produto">
+                </td>
+            </tr>
 
+            <tr>
+                <td>
                     <button type="submit" id="sendButton">Enviar</button>
                 </td>
             </tr>
