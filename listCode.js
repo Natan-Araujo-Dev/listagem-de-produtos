@@ -15,13 +15,13 @@ window.onload = function() {
     }
 
     productsList.forEach(product => {
-        addNewCard(product.name, product.value, product.description, product.image);
+        addNewCard(product.name, product.value, product.disponibility, product.description, product.image);
     });
 
     localStorage.setItem("canAddItem", false);
 };
 
-function addNewCard(name, value, description, image) {
+function addNewCard(name, value, disponibility, description, image) {
 
     //tabela
     let productsTable = document.getElementById("productsTable"); 
@@ -31,7 +31,7 @@ function addNewCard(name, value, description, image) {
 
     //celulas principais
     let cellName = document.createElement("td"); cellName.textContent = name; mainLine.appendChild(cellName);
-    let cellValue = document.createElement("td"); cellValue.textContent = value; mainLine.appendChild(cellValue);
+    let cellValue = document.createElement("td"); cellValue.innerHTML = "R$ " + value + "<br>Disponivel? " + disponibility; mainLine.appendChild(cellValue);
 
     //celulas auxiliares
     let cellImage = document.createElement("td"); const cardImage = document.createElement("img");

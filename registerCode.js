@@ -13,14 +13,18 @@ btn_send.addEventListener("click", function(uploadValue){
     const newProductDisponibility = document.getElementById("productDisponibility").value;
     const newProductDescription = document.getElementById("productDescription").value;
 
+    //método 1
     if (newProductName == "") {
-        alert("Prezado cliente,\ninsira o nome do seu produto antes de enviar.");
+        alert("Prezado cliente,\no produto necessita de um nome.\nPor favor, insira o nome do seu produto antes de enviar.");
     } else if (newProductValue == 0) {
-        alert("Prezado cliente,\no produto não pode estar de graça. Insira um valor acima de R$0.");
-    } else if (newProductValue < 0) {
-        alert("Prezado cliente,\no produto não pode ter valor negativo. Insira um valor acima de R$0.");
+        alert("Prezado cliente,\no produto não pode estar de graça nem ter valor negativo.\nPor favor, insira um valor acima de R$0.");
+    } else if (newProductImage == null) {
+        alert("Prezado cliente,\no produto necessita de uma foto.\nPor favor, insira uma foto.");
+    } else if (newProductDescription == "") {
+        alert("Prezado cliente,\no produto necessita de uma descrição.\nPor favor, insira uma descrição.");
     }
     else {
+        //método 2
         localStorage.setItem("canAddItem", true);
         
         newProduct = {
