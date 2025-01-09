@@ -1,5 +1,5 @@
 let newProduct;
-let newProductName, newProductValue;
+let newProductName, newProductValue, newProductDisponibility, newProductDescription;
 
 const btn_send = document.getElementById("sendButton");
 
@@ -10,6 +10,8 @@ btn_send.addEventListener("click", function(uploadValue){
 
     const newProductName = document.getElementById("productName").value;
     const newProductValue = Number(document.getElementById("productValue").value);
+    const newProductDisponibility = document.getElementById("productDisponibility").value;
+    const newProductDescription = document.getElementById("productDescription").value;
 
     if (newProductName == "") {
         alert("Prezado cliente,\ninsira o nome do seu produto antes de enviar.");
@@ -24,6 +26,8 @@ btn_send.addEventListener("click", function(uploadValue){
         newProduct = {
             name: newProductName,
             value: newProductValue,
+            disponibility: newProductDisponibility,
+            description: newProductDescription,
         };
     
         localStorage.setItem("newProduct", JSON.stringify(newProduct));

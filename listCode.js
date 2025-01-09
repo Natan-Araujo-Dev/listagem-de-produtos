@@ -15,28 +15,34 @@ window.onload = function() {
     }
 
     productsList.forEach(product => {
-        addNewProduct(product.name, product.value);
+        addNewProduct(product.name, product.value, product.description);
     });
 
     localStorage.setItem("canAddItem", false);
 };
 
-function addNewProduct(name, value) {
+function addNewProduct(name, value, description) {
 
     let productsTable = document.getElementById("productsTable");
 
     let newLine = document.createElement("tr");
+    let descriptionLine = document.createElement("tr");
 
-    let element1 = document.createElement("td");
-    element1.textContent = name;
+    let cellName = document.createElement("td");
+    cellName.textContent = name;
+    newLine.appendChild(cellName);
 
-    let element2 = document.createElement("td");
-    element2.textContent = value; 
+    let cellValue = document.createElement("td");
+    cellValue.textContent = value;
+    newLine.appendChild(cellValue);
 
-    newLine.appendChild(element1);
-    newLine.appendChild(element2);
+    let cellDescription = document.createElement("td");
+    cellDescription.textContent = description;
+    descriptionLine.appendChild(cellDescription);
+    cellDescription.setAttribute("colspan", "2");
 
     productsTable.appendChild(newLine);
+    productsTable.appendChild(descriptionLine);
 }
 
 document.getElementById("clearButton").addEventListener("click", function(deleteData){
@@ -45,3 +51,4 @@ document.getElementById("clearButton").addEventListener("click", function(delete
     localStorage.clear();
     window.location.href = "index.html";
 });
+//alteração
