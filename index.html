@@ -9,6 +9,7 @@
     <script src="registerCode.js" defer></script>
 </head>
 <body>
+    <header><h2>Carvalho digital store</h2></header>
     
     <span><h1>Adicione seu produto</h1></span>
     
@@ -16,21 +17,19 @@
         <table id="mainTable" border="1">
             <tr>
                 <td>
-                    <input type="text" id="productName" placeholder="Nome do produto">
+                    <input type="text" id="productName" placeholder="Nome do produto" maxlength="45">
                 </td>
 
                 <td colspan="1">
-                    <input type="number" id="productValue" placeholder="Valor do produto (R$)">
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    Disponível para venda?
-                    <select id="productDisponibility">
-                        <option>sim</option>
-                        <option>não</option>
-                    </select>
+                    <p>
+                        R$ <input type="number" id="productValue" placeholder="Valor do produto" maxlength="6"> <br> 
+                        Disponível para venda?
+                        <select id="productDisponibility">
+                            <option>Disponível</option>
+                            <option>Indisponível</option>
+                        </select>
+                    </p>
+                    
                 </td>
             </tr>
 
@@ -43,7 +42,7 @@
                 </td>
 
                 <td colspan="3" id="bottomTableElement">
-                    <input type="text" id="productDescription" placeholder="Descrição do produto">
+                    <input type="text" id="productDescription" placeholder="Descrição do produto" maxlength="480">
                 </td>
             </tr>
 
@@ -54,6 +53,22 @@
             </tr>
         </table>
     </span>
+
+    <button onclick="window.location.href='list.html'">Ver a loja</button>
+
+    <footer>
+        <h2>Sobre a Carvalho</h2>
+        <p>
+            Fundada em 2011, a Carvalho digital store é uma empresa que vende produtos em suas lojas digitais. A Carvalho tem a sua sede no Rio de Janeiro (Rio de Janeiro).
+            <br> <br>
+            Contatos:
+            <ul>
+                <li>Email: email.ficticio@gmail.com</li>
+                <li>Telefone: +55 21 9999-9999</li>
+                <li>Localização: Endereço Fictício nº1000</li>
+            </ul>
+        </p>
+    </footer>
 
 </body>
 </html>

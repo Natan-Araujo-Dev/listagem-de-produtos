@@ -13,7 +13,6 @@ btn_send.addEventListener("click", function(uploadValue){
     const newProductDisponibility = document.getElementById("productDisponibility").value;
     const newProductDescription = document.getElementById("productDescription").value;
 
-    //método 1
     if (newProductName == "") {
         alert("Prezado cliente,\no produto necessita de um nome.\nPor favor, insira o nome do seu produto antes de enviar.");
     } else if (newProductValue == 0) {
@@ -24,7 +23,6 @@ btn_send.addEventListener("click", function(uploadValue){
         alert("Prezado cliente,\no produto necessita de uma descrição.\nPor favor, insira uma descrição.");
     }
     else {
-        //método 2
         localStorage.setItem("canAddItem", true);
         
         newProduct = {

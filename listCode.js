@@ -24,14 +24,21 @@ window.onload = function() {
 function addNewCard(name, value, disponibility, description, image) {
 
     //tabela
-    let productsTable = document.getElementById("productsTable"); 
+    let productsTable = document.createElement("table");  document.getElementById("tableContainer").appendChild(productsTable); 
+    productsTable.classList.add("productCard");
 
     //linhas
     let mainLine = document.createElement("tr"); let descriptionLine = document.createElement("tr");
 
     //celulas principais
     let cellName = document.createElement("td"); cellName.textContent = name; mainLine.appendChild(cellName);
-    let cellValue = document.createElement("td"); cellValue.innerHTML = "R$ " + value + "<br>Disponivel? " + disponibility; mainLine.appendChild(cellValue);
+    cellName.classList.add("productName");
+
+    let cellValue = document.createElement("td");
+    cellValue.innerHTML = `<h2>R$</h2> <p>${value}</p><br>(${disponibility})`;
+    
+    mainLine.appendChild(cellValue);
+    cellValue.classList.add("productValue");
 
     //celulas auxiliares
     let cellImage = document.createElement("td"); const cardImage = document.createElement("img");
@@ -41,16 +48,16 @@ function addNewCard(name, value, disponibility, description, image) {
     } else {
         cardImage.src = image;
     }
-    cardImage.classList.add("cardImage");
+    cardImage.classList.add("productImage");
     
     cellImage.appendChild(cardImage); descriptionLine.appendChild(cellImage);
 
-    let cellDescription = document.createElement("td"); cellDescription.textContent = description; descriptionLine.appendChild(cellDescription); //cellDescription.setAttribute("colspan", "2");
-
+    let cellDescription = document.createElement("td"); cellDescription.textContent = description; descriptionLine.appendChild(cellDescription);
     productsTable.appendChild(mainLine); productsTable.appendChild(descriptionLine);
+    cellDescription.classList.add("productDescription");
 }
 
-document.getElementById("clearButton").addEventListener("click", function(deleteData){
+document.getElementById("clearButton").addEventListener("click", function(deleteData) {
     deleteData.preventDefault();
 
     localStorage.clear();
