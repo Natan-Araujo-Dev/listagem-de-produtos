@@ -44,7 +44,11 @@ btn_send.addEventListener("click", function(uploadValue){
 //é chamado no index.html
 function getImage(event) {
     const file = event.target.files[0];
-    if (file) {
+    
+    //"* 1024" pq é em kb
+    if (file.size > 500 * 1024) {
+        alert("Prezado cliente,\nA imagem não pode ser maior que 500Kb.\nPor favor, insira uma menor.\n\nDica: Existem sites que reduzem o tamanho de uma imagem pela internet,\nnós recomendamos o uso de um deles nesses casos.");
+    } else if (file) {
         const reader = new FileReader();
 
         reader.onload = function(e) {

@@ -4,6 +4,7 @@ let productsList = JSON.parse(localStorage.getItem("productsList")) || [];
 window.onload = function() {
 
     const canAddItem = localStorage.getItem("canAddItem");
+    console.log(canAddItem);
     if (canAddItem == "true") {
 
         const newProduct = JSON.parse(localStorage.getItem("newProduct"));
@@ -60,6 +61,9 @@ function addNewCard(name, value, disponibility, description, image) {
 document.getElementById("clearButton").addEventListener("click", function(deleteData) {
     deleteData.preventDefault();
 
+    const keepCanAddItem = localStorage.getItem("canAddItem");
     localStorage.clear();
+    localStorage.setItem("canAddItem", keepCanAddItem);
+
     window.location.href = "index.html";
 });

@@ -19,22 +19,22 @@
     <span id="addProduct"><h1>Adicione seu produto</h1></span>
     
     <span>
-        <table id="mainTable" border="1">
+        <table id="mainTable">
             <tr>
                 <td>
-                    <input type="text" id="productName" placeholder="Nome do produto" maxlength="45">
+                    <textarea rows="3" id="productName" placeholder="Insira o nome do produto aqui" maxlength="45"></textarea>
                 </td>
 
-                <td colspan="1">
-                    <p>
-                        R$ <input type="number" id="productValue" placeholder="Valor do produto" maxlength="6"> <br> 
-                        Disponível para venda?
+                <td>
+                    <h2 class="moneyUsed">R$</h2><input type="number" id="productValue" placeholder="Insira o preço do produto" maxlength="6"><br> 
+
+                    <span>
+                        <p>Disponível para venda?</p>
                         <select id="productDisponibility">
                             <option>Disponível</option>
                             <option>Indisponível</option>
                         </select>
-                    </p>
-                    
+                    </span>
                 </td>
             </tr>
 
@@ -46,20 +46,14 @@
                     </span>
                 </td>
 
-                <td colspan="3" id="bottomTableElement">
-                    <input type="text" id="productDescription" placeholder="Descrição do produto" maxlength="480">
-                </td>
-            </tr>
+                <td id="bottomTableElement">
+                    <textarea id="productDescription" placeholder="Insira uma descrição para o produto aqui (máximo de 480 caracteres)" maxlength="480"></textarea>
 
-            <tr>
-                <td>
                     <button type="submit" id="sendButton">Enviar</button>
                 </td>
             </tr>
         </table>
     </span>
-
-    <button onclick="window.location.href='list.html'">Ver a loja</button>
 
     <footer>
         <h2>Sobre a Carvalho</h2>

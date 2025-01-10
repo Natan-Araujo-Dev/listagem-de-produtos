@@ -15,7 +15,10 @@ header {
     margin-bottom: 70px;
 }
 
-/* Mudando */
+td {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
 
 #addProduct {
     display: flex;
@@ -32,7 +35,6 @@ header {
     table-layout: fixed;
 
     margin-top: 30px;
-    padding: 30px;
 
     border-radius: 10px;
     border: 4px solid rgb(223, 223, 223);
@@ -42,13 +44,96 @@ header {
     background-color: white;
 }
 
-/* Parei aqui */
 #productName {
-    width: 98%;
-    height: 70px;
+    width: 315px;
+    height: 140px;
+
+    font-size: 40px;
+    text-align: justify;
+        
+    color: #203074;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    resize: none;
+    overflow: hidden;
+
+    border: none;
 }
 
-/* Fim do Mudando */
+.moneyUsed {
+    white-space: nowrap;
+    display: inline;
+}
+
+#productValue { 
+    margin-left: 13px;
+    width: 212px;
+
+    text-align: center;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#productDisponibility {
+    padding-top: 0px;
+    width: 90px;
+}
+
+p, select {
+    display: inline-block;
+    margin: 0;
+}
+
+.cardImage {
+    border-radius: 10px;
+        
+    padding: 15px;
+
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+
+    justify-content: center;
+    object-fit: contain;
+    width: auto;
+    height: auto;
+
+    background-color: #f4f4f4;
+}
+
+#productDescription {
+    margin-bottom: 40px;
+
+    width: 300px;
+    height: 280px;
+
+    resize: none;
+    overflow: hidden;
+
+    border: none;
+}
+
+#bottomTableElement textarea, #bottomTableElement button {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+#bottomTableElement {
+    text-align: center;
+}
+
+#bottomTableElement button {
+    margin: 0;
+
+    padding: 15px 30px;
+    display: inline-block;
+
+    border-radius: 10px;
+    color: rgb(179, 179, 179);
+    background-color: #3f61fa;
+}
 
 .buttons {
 
